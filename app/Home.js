@@ -1,5 +1,7 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { router } from "expo-router";
 import { useState } from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 
 export default function Home() {
 
@@ -31,7 +33,7 @@ export default function Home() {
     <View style={styles.container}>
 
       {/* Title */}
-      <Text style={styles.title}> Nevermore </Text>
+      <Text style={styles.title}> In My Feelings </Text>
 
       {/* Window & GIF */}
       <View style={styles.windowContainer}>
@@ -58,28 +60,28 @@ export default function Home() {
 
         <TouchableOpacity
           style={styles.moodButton}
-          onPress={() => getPoem("happy")}
+          onPress={() => router.push("/happy/happy")}
         >
           <Text style={styles.buttonText}>Happy</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.moodButton}
-          onPress={() => getPoem("sad")}
+          onPress={() => router.push("/sad/sad")}
         >
           <Text style={styles.buttonText}>Sad</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.moodButton}
-          onPress={() => getPoem("angry")}
+          onPress={() => router.push("angry/angry")}
         >
           <Text style={styles.buttonText}>Angry</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.moodButton}
-          onPress={() => getPoem("relaxed")}
+          onPress={() => router.push("/relaxed/relaxed")}
         >
           <Text style={styles.buttonText}>Relaxed</Text>
         </TouchableOpacity>
@@ -107,9 +109,9 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 40,
-    color: '#ffffffff',
+    color: '#c79eceff',
     fontWeight: 'bold',
-    fontFamily: 'Georgia',
+    fontFamily: 'Courier',
     marginBottom: 30,
   },
 
